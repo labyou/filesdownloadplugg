@@ -1,0 +1,23 @@
+{
+  "name": "filesdownloadplugg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "parcel index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/labyou/filesdownloadplugg.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/labyou/filesdownloadplugg/issues"
+  },
+  "homepage": "https://github.com/labyou/filesdownloadplugg#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}

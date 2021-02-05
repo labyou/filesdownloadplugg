@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body {
+    background: #666;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    padding-top: 5rem;
+    width: 800px;
+    margin: 0 auto;
+}
+
+.card {
+    border-radius: 6px;
+    background: #fff;
+    padding: 1rem;
+    box-shadow: 2px 6px 10px rgb(0, 0, 0, .2);
+}
+
+.btn {
+    color: #42b983;
+    position: relative;
+    border-radius: 100px;
+    border: 1px solid #42b983;
+    text-transform: uppercase;
+    padding: 0.5rem 1.5rem;
+    font-weight: 700;
+    outline: none;
+    background: #fff;
+    transition: all 0.22s;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+.btn.primary {
+    background: #42b983;
+    color: #fff;
+}
+
+.btn:active {
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, .3);
+}
+
+.btn:hover {
+    cursor: pointer;
+    opacity: .9;
+}
+
+input[type = file] {
+    display: none;
+}
+
+.preview {
+    display: flex;
+    flex-wrap: wrap;
+    padding: .5rem;
+}
+
+.preview_block {
+    position: relative;
+    margin-bottom: 0.5rem;
+    margin-right: 0.5rem;
+    overflow: hidden;
+}
+
+.preview_block.removing {
+    transform: scale(0);
+    transition: transform .3s;
+}
+
+.preview_block img{
+    display: block;
+    width: 180px;
+    height: auto;
+}
+
+.preview_block:hover .preview_remove{
+    opacity: 1;
+}
+.preview_block:hover .preview_info{
+    bottom: 0;
+}
+
+.preview_remove {
+    opacity: 0;
+    width:20px;
+    height: 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-weight: bold;
+    background: rgba(73, 72, 72, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity .22s;
+}
+
+.preview_info {
+    position: absolute;
+    right: 0;
+    bottom: -35px;
+    left: 0;
+    height: 25px;
+    font-size: .8rem;
+    background: rgba(73, 72, 72, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px;
+    transition: bottom .22s;
+}
+
+
+/*# sourceMappingURL=/style.e308ff8e.css.map */
