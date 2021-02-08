@@ -16,16 +16,19 @@ const element = (tag, classes = [], content) => {
     return node;
 }
 
+const noop = function () {}
+
 export function upload(selector, options = {}) {
     let files = [];
+    const onUpload = options.onUpload ?? noop;
     const input = document.querySelector(selector); 
 
     const preview = element('div', ['preview']);
     const openButton = element('button', ['btn'], 'Open');
-    const upload = element('button', ['btn', 'primary'], 'Download');
+    const upload = element('button', ['btn', 'primary'], 'Upload');
     upload.style.display = 'none';
     input.insertAdjacentElement('afterend', preview);
-    input.insertAdjacentElement('afterend', upload)
+    input.insertAdjacentElement('afterend', upload);
     input.insertAdjacentElement('afterend', openButton);
 
     if (options.multi) { 
@@ -73,7 +76,17 @@ export function upload(selector, options = {}) {
         block.classList.add('removing');
         setTimeout(() => block.remove(), 300)
     }
+    const clearPreview = el => { 
+        el.style.bottom = '4px';
+        el.innerHTML = '<div class="preview_info_progress"><div>';
+    }
+    const uploadHandler = () => { 
+        preview.querySelectorAll('.preview_remove').forEach(e => e.remove());
+        const previewInfo = preview.querySelectorAll('.preview_info');
+        previewInfo.forEach(clearPreview);
+        onUpload(files, previewInfo);
+    }
     input.addEventListener('change', changeHandler);
     preview.addEventListener('click', removeHandler);
-    upload.addEventListener('click', uploadHandler)
+    upload.addEventListener('click', uploadHandler);
 }

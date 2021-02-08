@@ -111,3 +111,17 @@ input[type = file] {
     padding: 0 5px;
     transition: bottom .22s;
 }
+
+.preview_info_progress {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: -4px;
+    background: #42b983;
+    text-align: center;
+    transition: width .22s;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
